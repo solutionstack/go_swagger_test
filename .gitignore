@@ -1,0 +1,9 @@
+**/.DS_Store
+# test coverage
+cp.out
+workspace.xml
+.idea
+.idea/**/
+start*
+\\
+__debug_bin
