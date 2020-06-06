@@ -101,12 +101,14 @@ func (o *ReplaceTodoItemNotFound) WriteResponse(rw http.ResponseWriter, producer
 	}
 }
 
-/*ReplaceTodoItemDefault error
+// ReplaceTodoItemInternalServerErrorCode is the HTTP code returned for type ReplaceTodoItemInternalServerError
+const ReplaceTodoItemInternalServerErrorCode int = 500
 
-swagger:response replaceTodoItemDefault
+/*ReplaceTodoItemInternalServerError error
+
+swagger:response replaceTodoItemInternalServerError
 */
-type ReplaceTodoItemDefault struct {
-	_statusCode int
+type ReplaceTodoItemInternalServerError struct {
 
 	/*
 	  In: Body
@@ -114,43 +116,27 @@ type ReplaceTodoItemDefault struct {
 	Payload *models.Error `json:"body,omitempty"`
 }
 
-// NewReplaceTodoItemDefault creates ReplaceTodoItemDefault with default headers values
-func NewReplaceTodoItemDefault(code int) *ReplaceTodoItemDefault {
-	if code <= 0 {
-		code = 500
-	}
+// NewReplaceTodoItemInternalServerError creates ReplaceTodoItemInternalServerError with default headers values
+func NewReplaceTodoItemInternalServerError() *ReplaceTodoItemInternalServerError {
 
-	return &ReplaceTodoItemDefault{
-		_statusCode: code,
-	}
+	return &ReplaceTodoItemInternalServerError{}
 }
 
-// WithStatusCode adds the status to the replace todo item default response
-func (o *ReplaceTodoItemDefault) WithStatusCode(code int) *ReplaceTodoItemDefault {
-	o._statusCode = code
-	return o
-}
-
-// SetStatusCode sets the status to the replace todo item default response
-func (o *ReplaceTodoItemDefault) SetStatusCode(code int) {
-	o._statusCode = code
-}
-
-// WithPayload adds the payload to the replace todo item default response
-func (o *ReplaceTodoItemDefault) WithPayload(payload *models.Error) *ReplaceTodoItemDefault {
+// WithPayload adds the payload to the replace todo item internal server error response
+func (o *ReplaceTodoItemInternalServerError) WithPayload(payload *models.Error) *ReplaceTodoItemInternalServerError {
 	o.Payload = payload
 	return o
 }
 
-// SetPayload sets the payload to the replace todo item default response
-func (o *ReplaceTodoItemDefault) SetPayload(payload *models.Error) {
+// SetPayload sets the payload to the replace todo item internal server error response
+func (o *ReplaceTodoItemInternalServerError) SetPayload(payload *models.Error) {
 	o.Payload = payload
 }
 
 // WriteResponse to the client
-func (o *ReplaceTodoItemDefault) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+func (o *ReplaceTodoItemInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
 
-	rw.WriteHeader(o._statusCode)
+	rw.WriteHeader(500)
 	if o.Payload != nil {
 		payload := o.Payload
 		if err := producer.Produce(rw, payload); err != nil {

@@ -1,6 +1,9 @@
+//package main
 package main
 
 import (
+	"flag"
+	"fmt"
 	"github.com/go-openapi/loads"
 	"log"
 	"os"
@@ -32,9 +35,10 @@ func main(){
 
 
 	srv.Port = toint(os.Getenv("PORT"))
+	fmt.Println(srv.Port)
 	//or get port as flag
-	//var portFlag = flag.Int("port", 3000, "Port to run this service on")
-
+	var portFlag = flag.Int("port", 3000, "Port to run this service on")
+	srv.Port = *portFlag
 	defer func() {
 		log.Println("shutting down...")
 		srv.Shutdown()

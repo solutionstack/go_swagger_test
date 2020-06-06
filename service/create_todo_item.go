@@ -5,7 +5,7 @@ import (
 	"swagger_test/restapi/operations/todo"
 )
 
-
+//function does foo
 func (s *service) CreateTodoItem(item *todo.CreateTodoItemParams) (models.Item, error) {
 
 	var md models.Item

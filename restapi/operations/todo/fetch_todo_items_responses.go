@@ -60,12 +60,14 @@ func (o *FetchTodoItemsOK) WriteResponse(rw http.ResponseWriter, producer runtim
 	}
 }
 
-/*FetchTodoItemsDefault error occured
+// FetchTodoItemsInternalServerErrorCode is the HTTP code returned for type FetchTodoItemsInternalServerError
+const FetchTodoItemsInternalServerErrorCode int = 500
 
-swagger:response fetchTodoItemsDefault
+/*FetchTodoItemsInternalServerError error occured
+
+swagger:response fetchTodoItemsInternalServerError
 */
-type FetchTodoItemsDefault struct {
-	_statusCode int
+type FetchTodoItemsInternalServerError struct {
 
 	/*
 	  In: Body
@@ -73,43 +75,27 @@ type FetchTodoItemsDefault struct {
 	Payload *models.Error `json:"body,omitempty"`
 }
 
-// NewFetchTodoItemsDefault creates FetchTodoItemsDefault with default headers values
-func NewFetchTodoItemsDefault(code int) *FetchTodoItemsDefault {
-	if code <= 0 {
-		code = 500
-	}
+// NewFetchTodoItemsInternalServerError creates FetchTodoItemsInternalServerError with default headers values
+func NewFetchTodoItemsInternalServerError() *FetchTodoItemsInternalServerError {
 
-	return &FetchTodoItemsDefault{
-		_statusCode: code,
-	}
+	return &FetchTodoItemsInternalServerError{}
 }
 
-// WithStatusCode adds the status to the fetch todo items default response
-func (o *FetchTodoItemsDefault) WithStatusCode(code int) *FetchTodoItemsDefault {
-	o._statusCode = code
-	return o
-}
-
-// SetStatusCode sets the status to the fetch todo items default response
-func (o *FetchTodoItemsDefault) SetStatusCode(code int) {
-	o._statusCode = code
-}
-
-// WithPayload adds the payload to the fetch todo items default response
-func (o *FetchTodoItemsDefault) WithPayload(payload *models.Error) *FetchTodoItemsDefault {
+// WithPayload adds the payload to the fetch todo items internal server error response
+func (o *FetchTodoItemsInternalServerError) WithPayload(payload *models.Error) *FetchTodoItemsInternalServerError {
 	o.Payload = payload
 	return o
 }
 
-// SetPayload sets the payload to the fetch todo items default response
-func (o *FetchTodoItemsDefault) SetPayload(payload *models.Error) {
+// SetPayload sets the payload to the fetch todo items internal server error response
+func (o *FetchTodoItemsInternalServerError) SetPayload(payload *models.Error) {
 	o.Payload = payload
 }
 
 // WriteResponse to the client
-func (o *FetchTodoItemsDefault) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+func (o *FetchTodoItemsInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
 
-	rw.WriteHeader(o._statusCode)
+	rw.WriteHeader(500)
 	if o.Payload != nil {
 		payload := o.Payload
 		if err := producer.Produce(rw, payload); err != nil {

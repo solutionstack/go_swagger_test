@@ -31,7 +31,9 @@ func NewFetchTodoItems(ctx *middleware.Context, handler FetchTodoItemsHandler) *
 
 /*FetchTodoItems swagger:route GET / todo fetchTodoItems
 
-FetchTodoItems fetch todo items API
+fetch[]
+
+fetch all tiems
 
 */
 type FetchTodoItems struct {

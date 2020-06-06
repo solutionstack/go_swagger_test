@@ -31,7 +31,9 @@ func NewCreateTodoItem(ctx *middleware.Context, handler CreateTodoItemHandler) *
 
 /*CreateTodoItem swagger:route POST / todo createTodoItem
 
-CreateTodoItem create todo item API
+create
+
+create a new todo item
 
 */
 type CreateTodoItem struct {

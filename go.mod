@@ -11,8 +11,9 @@ require (
 	github.com/go-openapi/strfmt v0.19.4
 	github.com/go-openapi/swag v0.19.7
 	github.com/go-openapi/validate v0.19.6
-	github.com/golang/mock v1.4.3 // indirect
+	github.com/golang/mock v1.4.3
 	github.com/jessevdk/go-flags v1.4.0
 	github.com/timolinn/joncalhoun-dl v0.0.0-20200307152042-9ae2939c4110 // indirect
 	golang.org/x/net v0.0.0-20200425230154-ff2c4b7c35a0
+	golang.org/x/tools v0.0.0-20200515010526-7d3b6ebf133d // indirect
 )

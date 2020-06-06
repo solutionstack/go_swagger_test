@@ -37,9 +37,11 @@ func init() {
   "paths": {
     "/": {
       "get": {
+        "description": "fetch all tiems",
         "tags": [
           "todo"
         ],
+        "summary": "fetch[]",
         "operationId": "fetchTodoItems",
         "responses": {
           "200": {
@@ -51,7 +53,7 @@ func init() {
               }
             }
           },
-          "default": {
+          "500": {
             "description": "error occured",
             "schema": {
               "$ref": "#/definitions/error"
@@ -60,9 +62,11 @@ func init() {
         }
       },
       "post": {
+        "description": "create a new todo item",
         "tags": [
           "todo"
         ],
+        "summary": "create",
         "operationId": "createTodoItem",
         "parameters": [
           {
@@ -81,7 +85,7 @@ func init() {
               "$ref": "#/definitions/item"
             }
           },
-          "default": {
+          "500": {
             "description": "error occured",
             "schema": {
               "$ref": "#/definitions/error"
@@ -92,9 +96,11 @@ func init() {
     },
     "/{id}": {
       "get": {
+        "description": "get a single item",
         "tags": [
           "todo"
         ],
+        "summary": "Get",
         "operationId": "fetchTodoItem",
         "responses": {
           "200": {
@@ -109,7 +115,7 @@ func init() {
               "$ref": "#/definitions/error"
             }
           },
-          "default": {
+          "500": {
             "description": "error",
             "schema": {
               "$ref": "#/definitions/error"
@@ -118,9 +124,11 @@ func init() {
         }
       },
       "put": {
+        "description": "replace a single item",
         "tags": [
           "todo"
         ],
+        "summary": "replace",
         "operationId": "replaceTodoItem",
         "parameters": [
           {
@@ -144,7 +152,7 @@ func init() {
               "$ref": "#/definitions/error"
             }
           },
-          "default": {
+          "500": {
             "description": "error",
             "schema": {
               "$ref": "#/definitions/error"
@@ -153,9 +161,11 @@ func init() {
         }
       },
       "delete": {
+        "description": "delete a single item",
         "tags": [
           "todo"
         ],
+        "summary": "delete",
         "operationId": "deleteTodoItem",
         "responses": {
           "204": {
@@ -167,7 +177,7 @@ func init() {
               "$ref": "#/definitions/error"
             }
           },
-          "default": {
+          "500": {
             "description": "error",
             "schema": {
               "$ref": "#/definitions/error"
@@ -241,9 +251,11 @@ func init() {
   "paths": {
     "/": {
       "get": {
+        "description": "fetch all tiems",
         "tags": [
           "todo"
         ],
+        "summary": "fetch[]",
         "operationId": "fetchTodoItems",
         "responses": {
           "200": {
@@ -255,7 +267,7 @@ func init() {
               }
             }
           },
-          "default": {
+          "500": {
             "description": "error occured",
             "schema": {
               "$ref": "#/definitions/error"
@@ -264,9 +276,11 @@ func init() {
         }
       },
       "post": {
+        "description": "create a new todo item",
         "tags": [
           "todo"
         ],
+        "summary": "create",
         "operationId": "createTodoItem",
         "parameters": [
           {
@@ -285,7 +299,7 @@ func init() {
               "$ref": "#/definitions/item"
             }
           },
-          "default": {
+          "500": {
             "description": "error occured",
             "schema": {
               "$ref": "#/definitions/error"
@@ -296,9 +310,11 @@ func init() {
     },
     "/{id}": {
       "get": {
+        "description": "get a single item",
         "tags": [
           "todo"
         ],
+        "summary": "Get",
         "operationId": "fetchTodoItem",
         "responses": {
           "200": {
@@ -313,7 +329,7 @@ func init() {
               "$ref": "#/definitions/error"
             }
           },
-          "default": {
+          "500": {
             "description": "error",
             "schema": {
               "$ref": "#/definitions/error"
@@ -322,9 +338,11 @@ func init() {
         }
       },
       "put": {
+        "description": "replace a single item",
         "tags": [
           "todo"
         ],
+        "summary": "replace",
         "operationId": "replaceTodoItem",
         "parameters": [
           {
@@ -348,7 +366,7 @@ func init() {
               "$ref": "#/definitions/error"
             }
           },
-          "default": {
+          "500": {
             "description": "error",
             "schema": {
               "$ref": "#/definitions/error"
@@ -357,9 +375,11 @@ func init() {
         }
       },
       "delete": {
+        "description": "delete a single item",
         "tags": [
           "todo"
         ],
+        "summary": "delete",
         "operationId": "deleteTodoItem",
         "responses": {
           "204": {
@@ -371,7 +391,7 @@ func init() {
               "$ref": "#/definitions/error"
             }
           },
-          "default": {
+          "500": {
             "description": "error",
             "schema": {
               "$ref": "#/definitions/error"

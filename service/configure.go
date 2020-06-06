@@ -2,7 +2,6 @@ package service
 
 import (
 	"github.com/go-openapi/runtime/middleware"
-	"net/http"
 	"swagger_test/models"
 	"swagger_test/restapi/operations"
 	"swagger_test/restapi/operations/todo"
@@ -17,7 +16,7 @@ func (s *service) Configure(api *operations.SwaggerAPI) {
 			return todo.NewCreateTodoItemCreated().WithPayload(&item)
 		}
 
-		return todo.NewCreateTodoItemDefault(http.StatusInternalServerError)
+		return todo.NewCreateTodoItemInternalServerError()
 	})
 
 

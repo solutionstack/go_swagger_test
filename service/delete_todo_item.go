@@ -4,6 +4,7 @@ import (
 	"errors"
 )
 
+//function bar
 func (s *service) DeleteTodoItem(id int64) error {
 	//check if item exist
 	if _, ok := List[id]; !ok {

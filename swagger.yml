@@ -28,10 +28,12 @@ paths:
           description: Created
           schema:
             $ref: "#/definitions/item"
-        default:
+        500:
           description: error occured
           schema:
             $ref: "#/definitions/error"
+      summary: create
+      description: create a new todo item
 
 
     get:
@@ -46,10 +48,12 @@ paths:
             type: array
             items:
               $ref: "#/definitions/item"
-        default:
+        500:
           description: error occured
           schema:
             $ref: "#/definitions/error"
+      summary: fetch[]
+      description: fetch all tiems
 
 
 
@@ -82,10 +86,12 @@ paths:
           description: Not Found
           schema:
             $ref: "#/definitions/error"
-        default:
+        500:
           description: error
           schema:
             $ref: "#/definitions/error"
+      summary: replace
+      description: replace a single item
 
     delete:
       operationId: deleteTodoItem
@@ -98,10 +104,13 @@ paths:
           description: Not Found
           schema:
             $ref: "#/definitions/error"
-        default:
+        500:
           description: error
           schema:
             $ref: "#/definitions/error"
+      summary: delete
+      description: delete a single item
+
     get:
       operationId: fetchTodoItem
       tags:
@@ -115,10 +124,12 @@ paths:
           description: Not Found
           schema:
             $ref: "#/definitions/error"
-        default:
+        500:
           description: error
           schema:
             $ref: "#/definitions/error"
+      summary: Get
+      description: get a single item
 
 definitions:
   item:

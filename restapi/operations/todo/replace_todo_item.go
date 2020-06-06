@@ -31,7 +31,9 @@ func NewReplaceTodoItem(ctx *middleware.Context, handler ReplaceTodoItemHandler)
 
 /*ReplaceTodoItem swagger:route PUT /{id} todo replaceTodoItem
 
-ReplaceTodoItem replace todo item API
+replace
+
+replace a single item
 
 */
 type ReplaceTodoItem struct {

@@ -81,12 +81,14 @@ func (o *DeleteTodoItemNotFound) WriteResponse(rw http.ResponseWriter, producer 
 	}
 }
 
-/*DeleteTodoItemDefault error
+// DeleteTodoItemInternalServerErrorCode is the HTTP code returned for type DeleteTodoItemInternalServerError
+const DeleteTodoItemInternalServerErrorCode int = 500
 
-swagger:response deleteTodoItemDefault
+/*DeleteTodoItemInternalServerError error
+
+swagger:response deleteTodoItemInternalServerError
 */
-type DeleteTodoItemDefault struct {
-	_statusCode int
+type DeleteTodoItemInternalServerError struct {
 
 	/*
 	  In: Body
@@ -94,43 +96,27 @@ type DeleteTodoItemDefault struct {
 	Payload *models.Error `json:"body,omitempty"`
 }
 
-// NewDeleteTodoItemDefault creates DeleteTodoItemDefault with default headers values
-func NewDeleteTodoItemDefault(code int) *DeleteTodoItemDefault {
-	if code <= 0 {
-		code = 500
-	}
+// NewDeleteTodoItemInternalServerError creates DeleteTodoItemInternalServerError with default headers values
+func NewDeleteTodoItemInternalServerError() *DeleteTodoItemInternalServerError {
 
-	return &DeleteTodoItemDefault{
-		_statusCode: code,
-	}
+	return &DeleteTodoItemInternalServerError{}
 }
 
-// WithStatusCode adds the status to the delete todo item default response
-func (o *DeleteTodoItemDefault) WithStatusCode(code int) *DeleteTodoItemDefault {
-	o._statusCode = code
-	return o
-}
-
-// SetStatusCode sets the status to the delete todo item default response
-func (o *DeleteTodoItemDefault) SetStatusCode(code int) {
-	o._statusCode = code
-}
-
-// WithPayload adds the payload to the delete todo item default response
-func (o *DeleteTodoItemDefault) WithPayload(payload *models.Error) *DeleteTodoItemDefault {
+// WithPayload adds the payload to the delete todo item internal server error response
+func (o *DeleteTodoItemInternalServerError) WithPayload(payload *models.Error) *DeleteTodoItemInternalServerError {
 	o.Payload = payload
 	return o
 }
 
-// SetPayload sets the payload to the delete todo item default response
-func (o *DeleteTodoItemDefault) SetPayload(payload *models.Error) {
+// SetPayload sets the payload to the delete todo item internal server error response
+func (o *DeleteTodoItemInternalServerError) SetPayload(payload *models.Error) {
 	o.Payload = payload
 }
 
 // WriteResponse to the client
-func (o *DeleteTodoItemDefault) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+func (o *DeleteTodoItemInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
 
-	rw.WriteHeader(o._statusCode)
+	rw.WriteHeader(500)
 	if o.Payload != nil {
 		payload := o.Payload
 		if err := producer.Produce(rw, payload); err != nil {

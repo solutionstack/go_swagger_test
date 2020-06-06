@@ -31,7 +31,9 @@ func NewDeleteTodoItem(ctx *middleware.Context, handler DeleteTodoItemHandler) *
 
 /*DeleteTodoItem swagger:route DELETE /{id} todo deleteTodoItem
 
-DeleteTodoItem delete todo item API
+delete
+
+delete a single item
 
 */
 type DeleteTodoItem struct {

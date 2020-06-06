@@ -1,4 +1,6 @@
 //go:generate mockgen -package=mocks -destination=../mocks/service.go swagger_test/service Service
+
+//implements foo
 package service
 
 import (
@@ -6,6 +8,7 @@ import (
 	"swagger_test/restapi/operations"
 	"swagger_test/restapi/operations/todo"
 )
+
 
 var List map[int64]models.Item = map[int64]models.Item{}
 
@@ -18,7 +21,6 @@ type Service interface {
 	DeleteTodoItem(id int64) error
 	ReplaceTodoItem(id int64, item *todo.ReplaceTodoItemParams) (models.Item, error)
 	Configure(api *operations.SwaggerAPI)
-
 }
 
 func NewService() Service {
